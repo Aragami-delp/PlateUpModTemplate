@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Aragami",
+    "classifications": ["PlateUp", "Mod", "BepInEx"],
+    "identity": "Aragami.PlateUp.ModTemplateBepInEx",
+    "name": "PlateUp BepInEx template with KitchenLib",
+    "shortName": "plateupbepinexmod",
+    "preferNameDirectory": true,
+    "sourceName": "Aragami.PlateUp.ModTemplate",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "defaultName": "Unnamed_PlateUp_Mod"
+}
