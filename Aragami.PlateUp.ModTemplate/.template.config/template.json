@@ -11,5 +11,13 @@
         "language": "C#",
         "type": "project"
     },
-    "defaultName": "Unnamed_PlateUp_Mod"
+    "defaultName": "Unnamed_PlateUp_Mod",
+    "symbols":{
+        "winplateupgamefolder": {
+            "type": "parameter",
+            "description": "Path where your PlateUp.exe is located at without trailing slash.",
+            "defaultValue": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\PlateUp\\PlateUp",
+            "replaces":"{PlateUpGameFolder}"
+        }
+    }
 }

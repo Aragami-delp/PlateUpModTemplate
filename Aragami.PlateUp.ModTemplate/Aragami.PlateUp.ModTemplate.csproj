@@ -24,14 +24,13 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
 
-  <!-- Replace Path with the path your PlateUp.exe is located at-->
+  <!-- Absolute Path to PlateUp.exe-->
   <PropertyGroup Condition="$(os)=='Windows_NT'">
-    <PlateUpGameFolder>C:\Program Files (x86)\Steam\steamapps\common\PlateUp\PlateUp</PlateUpGameFolder>
+    <PlateUpGameFolder>{PlateUpGameFolder}</PlateUpGameFolder>
   </PropertyGroup>
-  <!-- Uncomment for UNIX use
   <PropertyGroup Condition="$(os)=='UNIX'">
     <PlateUpGameFolder>/Users/username/Desktop/PlateUp</PlateUpGameFolder>
-  </PropertyGroup> -->
+  </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="BepInEx">
@@ -70,8 +69,8 @@
     <Reference Include="Kitchen.RestaurantMode">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Kitchen.RestaurantMode.dll</HintPath>
     </Reference>
-    <Reference Include="KitchenLib">
-      <HintPath>$(PlateUpGameFolder)\BepInEx\plugins\KitchenLib.dll</HintPath>
+    <Reference Include="KitchenLib-BepInEx">
+      <HintPath>$(PlateUpGameFolder)\BepInEx\plugins\KitchenLib-BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="KitchenMode">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\KitchenMode.dll</HintPath>

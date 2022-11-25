@@ -5,9 +5,9 @@ using System.Reflection;
 namespace Aragami.PlateUp.ModTemplate
 {
     // guid must be unique and is recommended to be in reverse domain name notation
-    // mod name that is displayed to the player
+    // mod name that is displayed to the player and listed in the mods menu
     // mod version must follow semver e.g. "1.2.3"
-    [BepInPlugin("example.guid", "Displayed mod name", "0.1.0")]
+    [BepInPlugin("example.guid", "Aragami.PlateUp.ModTemplate", "0.1.0")]
     [BepInProcess("PlateUp.exe")]
     [BepInDependency("kitchenmods.kitchenlib")]
     public class Mod : BaseMod
@@ -19,7 +19,7 @@ namespace Aragami.PlateUp.ModTemplate
 
         private void Awake()
         {
-            Logger.LogInfo($"{Assembly.GetExecutingAssembly().GetName().Name} loaded!");
+            Logger.LogInfo("Aragami.PlateUp.ModTemplate loaded!");
         }
     }
 }
