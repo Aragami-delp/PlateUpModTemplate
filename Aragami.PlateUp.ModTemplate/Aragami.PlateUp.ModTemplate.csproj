@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aragami.PlateUp.ModTemplate</RootNamespace>
     <AssemblyName>Aragami.PlateUp.ModTemplate</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -24,12 +24,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
 
+  <!-- Replace Path with the path your PlateUp.exe is located at-->
   <PropertyGroup Condition="$(os)=='Windows_NT'">
-    <PlateUpGameFolder>F:\SteamLibrary\steamapps\common\PlateUp\PlateUp</PlateUpGameFolder>
-  </PropertyGroup>
-  <!--<PropertyGroup Condition="$(os)=='Windows_NT'">
     <PlateUpGameFolder>C:\Program Files (x86)\Steam\steamapps\common\PlateUp\PlateUp</PlateUpGameFolder>
-  </PropertyGroup>-->
+  </PropertyGroup>
   <!-- Uncomment for UNIX use
   <PropertyGroup Condition="$(os)=='UNIX'">
     <PlateUpGameFolder>/Users/username/Desktop/PlateUp</PlateUpGameFolder>
@@ -72,8 +70,8 @@
     <Reference Include="Kitchen.RestaurantMode">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Kitchen.RestaurantMode.dll</HintPath>
     </Reference>
-    <Reference Include="KitchenLib-BepInEx">
-      <HintPath>$(PlateUpGameFolder)\BepInEx\plugins\KitchenLib-BepInEx.dll</HintPath>
+    <Reference Include="KitchenLib">
+      <HintPath>$(PlateUpGameFolder)\BepInEx\plugins\KitchenLib.dll</HintPath>
     </Reference>
     <Reference Include="KitchenMode">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\KitchenMode.dll</HintPath>
@@ -111,8 +109,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
 
   <ItemGroup>
