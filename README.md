@@ -16,3 +16,5 @@ Make sure to replace the 5 parameters with your own:
 ``--guid`` is you guid, preferbly in reverse domain notation  e.g: ``AuthorName.PlateUp.ModName``
 ``--param:author`` is the name of the mod creater (your name)  e.g: ``YourName``
 ``--plateupgamedirectory`` is the full path to the game (where the PlateUp.exe is located at)  e.g: ``"C:\Program Files (x86)\Steam\SteamLibrary\steamapps\common\PlateUp\PlateUp"`` WITHOUT a trailing backslash
+
+After installing you can open the ``YourModName.csproj`` using your prefered IDE (like Visual Studio)
