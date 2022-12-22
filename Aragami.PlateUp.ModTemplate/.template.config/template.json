@@ -1,15 +1,32 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Aragami",
-    "classifications": ["PlateUp", "Mod", "BepInEx"],
-    "identity": "Aragami.PlateUp.ModTemplateBepInEx",
-    "name": "PlateUp BepInEx template with KitchenLib",
-    "shortName": "plateupbepinexmod",
+    "classifications": ["PlateUp", "Mod", "Workshop"],
+    "identity": "AragamiPlateUpModTemplate",
+    "name": "PlateUp Workshop template with KitchenLib",
+    "shortName": "plateupworkshopmod",
     "preferNameDirectory": true,
-    "sourceName": "Aragami.PlateUp.ModTemplate",
+    "sourceName": "ModName",
     "tags": {
         "language": "C#",
         "type": "project"
     },
-    "defaultName": "Unnamed_PlateUp_Mod"
+    "defaultName": "Unnamed_PlateUp_Mod",
+    "symbols": {
+        "GUID": {
+            "type": "parameter",
+            "defaultValue": "your.guid",
+            "replaces": "example.guid"
+        },
+        "AUTHOR": {
+            "type": "parameter",
+            "defaultValue": "yourName",
+            "replaces": "username"
+        },
+        "PlateUpGameFolder": {
+            "type": "parameter",
+            "defaultValue": "C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp",
+            "replaces": "PlateUpGameFolderPath"
+        }
+    }
 }

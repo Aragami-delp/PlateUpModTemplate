@@ -9,14 +9,23 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aragami.PlateUp.ModTemplate</RootNamespace>
     <AssemblyName>Aragami.PlateUp.ModTemplate</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BEPINEX|AnyCPU'">
-    <OutputPath>bin\BEPINEX\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WORKSHOP|AnyCPU'">
+    <OutputPath>bin\WORKSHOP\</OutputPath>
+    <DefineConstants>TRACE;Workshop</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WORKSHOPMONO|AnyCPU'">
+    <OutputPath>bin\WORKSHOPMONO\</OutputPath>
+    <DefineConstants>TRACE;WorkshopMono</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -24,20 +33,20 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
 
-  <!-- Absolute Path to PlateUp.exe-->
+  <!-- Absolute Path to PlateUp.exe   e.g: C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp -->
   <PropertyGroup Condition="$(os)=='Windows_NT'">
-    <PlateUpGameFolder>{PlateUpGameFolder}</PlateUpGameFolder>
+    <PlateUpGameFolder>F:\SteamLibrary\steamapps\common\PlateUp\PlateUp\<!--gamepath--></PlateUpGameFolder>
   </PropertyGroup>
   <PropertyGroup Condition="$(os)=='UNIX'">
-    <PlateUpGameFolder>/Users/username/Desktop/PlateUp</PlateUpGameFolder>
+    <PlateUpGameFolder>gamepath</PlateUpGameFolder>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="BepInEx">
-      <HintPath>$(PlateUpGameFolder)\BepInEx\core\BepInEx.dll</HintPath>
-    </Reference>
     <Reference Include="Controllers">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Harmony">
+      <HintPath>$(PlateUpGameFolder)\..\..\..\workshop\content\1599600\2898033283\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Kitchen.Common">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Kitchen.Common.dll</HintPath>
@@ -69,11 +78,14 @@
     <Reference Include="Kitchen.RestaurantMode">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Kitchen.RestaurantMode.dll</HintPath>
     </Reference>
-    <Reference Include="KitchenLib-BepInEx">
-      <HintPath>$(PlateUpGameFolder)\BepInEx\plugins\KitchenLib-BepInEx.dll</HintPath>
+    <Reference Include="KitchenLib">
+      <HintPath>$(PlateUpGameFolder)\..\..\..\workshop\content\1599600\2898069883\KitchenLib-Workshop.dll</HintPath>
     </Reference>
     <Reference Include="KitchenMode">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\KitchenMode.dll</HintPath>
+    </Reference>
+    <Reference Include="KitchenMods">
+      <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\KitchenMods.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Newtonsoft.Json.dll</HintPath>
@@ -114,8 +126,10 @@
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd $(TargetDir)&#xD;&#xA;copy /y $(TargetName).dll &quot;$(PlateUpGameFolder)\BepInEx\plugins&quot;" />
-  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+      copy /Y "$(TargetDir)$(TargetName).dll" "$(TargetDir)\..\..\WorkshopFolder\content\$(TargetName).dll"
+    </PostBuildEvent>
+  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
