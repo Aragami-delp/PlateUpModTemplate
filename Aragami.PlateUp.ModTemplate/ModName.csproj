@@ -33,7 +33,7 @@
   </PropertyGroup>
   <!-- Absolute Path to PlateUp.exe   e.g: C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp -->
   <PropertyGroup>
-    <PlateUpGameFolder>F:\SteamLibrary\steamapps\common\PlateUp\PlateUp\</PlateUpGameFolder>
+    <PlateUpGameFolder>gamepath</PlateUpGameFolder>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Controllers">

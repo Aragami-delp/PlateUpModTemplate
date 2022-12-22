@@ -1,1 +1,1 @@
-xcopy /Y "WorkshopFolder" "gamepathMods\ModName" /s /e
+xcopy /Y "WorkshopFolder" "gamepath\Mods\ModName" /s /e /i
