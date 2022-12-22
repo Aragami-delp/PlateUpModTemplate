@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Aragami.PlateUp.ModTemplate</id>
+    <version>0.1.0</version>
+    <description>
+      Creates a workshop mod project template with harmony and kitchenlib
+    </description>
+    <authors>Aragami</authors>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src=".\"
+          exclude="**\bin;**\obj;**\.vs\**"
+          target="src" />
+  </files>
+</package>

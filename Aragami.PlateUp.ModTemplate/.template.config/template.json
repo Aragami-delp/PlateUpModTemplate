@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Aragami",
-    "classifications": ["PlateUp", "Mod", "Workshop"],
+    "classifications": ["PlateUp", "Mod", "Workshop", "KitchenLib", "Harmony"],
     "identity": "AragamiPlateUpModTemplate",
     "name": "PlateUp Workshop template with KitchenLib",
     "shortName": "plateupworkshopmod",
