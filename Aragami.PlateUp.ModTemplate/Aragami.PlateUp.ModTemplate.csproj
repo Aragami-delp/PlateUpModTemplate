@@ -13,7 +13,6 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WORKSHOP|AnyCPU'">
     <OutputPath>bin\WORKSHOP\</OutputPath>
     <DefineConstants>TRACE;Workshop</DefineConstants>
@@ -32,7 +31,6 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
-
   <!-- Absolute Path to PlateUp.exe   e.g: C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp -->
   <PropertyGroup Condition="$(os)=='Windows_NT'">
     <PlateUpGameFolder>F:\SteamLibrary\steamapps\common\PlateUp\PlateUp\<!--gamepath--></PlateUpGameFolder>
@@ -40,7 +38,6 @@
   <PropertyGroup Condition="$(os)=='UNIX'">
     <PlateUpGameFolder>gamepath</PlateUpGameFolder>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="Controllers">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Controllers.dll</HintPath>
@@ -121,15 +118,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-      copy /Y "$(TargetDir)$(TargetName).dll" "$(TargetDir)\..\..\WorkshopFolder\content\$(TargetName).dll"
-    </PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).dll" "$(TargetDir)\..\..\WorkshopFolder\content\$(TargetName).dll"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
