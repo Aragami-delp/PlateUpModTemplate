@@ -4,7 +4,7 @@ This template is designed to get you started with creating a workshop mod right 
 
 ## How to create a mod using this template
 
-Make sure you are subscribed to KitchenLib and Harmony in the steam workshop and that they are up-to-date
+Make sure you are subscribed to KitchenLib and Harmony in the steam workshop
 
 Download newest Aragami.PlateUp.ModTemplate.x.x.x.nupkg version from releases on the right side of the webpage
 
