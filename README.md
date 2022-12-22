@@ -1,6 +1,6 @@
 # PlateUp Mod Template
 
-This template is designed to get you started with creating a workshop mod right away without all the referencing stuff.
+This template is designed to get you started with creating a workshop mod right away without all the setup stuff.
 
 ## How to create a mod using this template
 
