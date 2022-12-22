@@ -7,8 +7,8 @@
     <ProjectGuid>{F9086435-4BC0-48AC-B0EE-E2A345DE53C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aragami.PlateUp.ModTemplate</RootNamespace>
-    <AssemblyName>Aragami.PlateUp.ModTemplate</AssemblyName>
+    <RootNamespace>ModName</RootNamespace>
+    <AssemblyName>ModName</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,10 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <!-- Absolute Path to PlateUp.exe   e.g: C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp -->
-  <PropertyGroup Condition="$(os)=='Windows_NT'">
-    <PlateUpGameFolder>F:\SteamLibrary\steamapps\common\PlateUp\PlateUp\<!--gamepath--></PlateUpGameFolder>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(os)=='UNIX'">
+  <PropertyGroup>
     <PlateUpGameFolder>gamepath</PlateUpGameFolder>
   </PropertyGroup>
   <ItemGroup>
@@ -122,8 +119,8 @@
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).dll" "$(TargetDir)\..\..\WorkshopFolder\content\$(TargetName).dll"</PostBuildEvent>
-  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetDir)$(TargetName).dll" "$(TargetDir)..\..\WorkshopFolder\content\" /i</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -13,20 +13,23 @@
     },
     "defaultName": "Unnamed_PlateUp_Mod",
     "symbols": {
-        "GUID": {
+        "guid": {
             "type": "parameter",
             "defaultValue": "your.guid",
-            "replaces": "example.guid"
+            "replaces": "example.guid",
+            "isRequired": true
         },
-        "AUTHOR": {
+        "author": {
             "type": "parameter",
             "defaultValue": "yourName",
-            "replaces": "username"
+            "replaces": "username",
+            "isRequired": true
         },
-        "PlateUpGameFolder": {
+        "plateupgamedirectory": {
             "type": "parameter",
             "defaultValue": "C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp",
-            "replaces": "PlateUpGameFolderPath"
+            "replaces": "gamepath",
+            "isRequired": true
         }
     }
 }
