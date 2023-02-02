@@ -25,11 +25,5 @@
             "replaces": "username",
             "isRequired": true
         },
-        "plateupgamedirectory": {
-            "type": "parameter",
-            "defaultValue": "C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp",
-            "replaces": "gamepath",
-            "isRequired": true
-        }
     }
 }
