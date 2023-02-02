@@ -1,1 +1,0 @@
-xcopy /Y "WorkshopFolder" "gamepath\Mods\ModName" /s /e /i
